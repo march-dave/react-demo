@@ -9,9 +9,8 @@ const API = {
   },
 
   addNewTenant(tenant) {
-    ServerActions.receiveOneTenant(tenant)
-    // post('/api/tenants', tenant)
-    //   .done(response => { ServerActions.receiveOneTenant(response) })
+    post('/api/tenants', tenant)
+      .done(response => { ServerActions.receiveOneTenant(response) })
   },
 
   updateTenant(tenant) {

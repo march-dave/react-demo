@@ -1,25 +1,30 @@
 import React, { Component } from 'react'
+import Tenant from './Tenant';
 
-import { EventEmitter } from 'events'
-import AppDispatcher from '../AppDispatcher'
+export default class TenantsDisplay extends Component {
+  constructor(props){
+    super(props);
 
-export default class Tenants extends Component {
-  constructor(props) {
-    super(props)
   }
 
   render() {
-    let {tenants} = this.props;
+    let { tenants } = this.props
+    let display = tenants.length && tenants.map(tenant => <Tenant key={tenant._id} tenant={tenant} />);
 
-  let display = tenants.length && tenants.map(tenant => {
-    return <li>{tenant.name}</li>
-  })
-
-  return(
-    <ul>
-      {display || 'No Tenants'}
-    </ul>
-  )
-
+    return (
+      <table className="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody className="text-left">
+          {display || 'No Tenants To Display'}
+        </tbody>
+      </table>
+    )
   }
 }

@@ -1,20 +1,20 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router'
 import NavBar from './NavBar'
-import Dashboard from './Dashboard'
-import Tenants from './Tenants'
 
 export default class App extends Component {
-  render() {
+  constructor(props){
+    super(props);
+  }
 
+  render() {
     return (
-      <div>
+      <div className="text-center">
         <NavBar />
-          <div className="container">
-            {this.props.children}
-          </div>
-        
+        <div className="container">
+          {this.props.children}
+        </div>
       </div>
     )
-
   }
 }

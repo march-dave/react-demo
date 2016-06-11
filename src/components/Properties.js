@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class Dashboard extends Component {
+export default class Properties extends Component {
   constructor(props){
     super(props);
   }
@@ -8,8 +8,10 @@ export default class Dashboard extends Component {
   render() {
     return (
       <div className="text-center">
-        <h1>Welcome to Managed Properties!</h1>
-        <h3>What would you like to do?</h3>
+        <h1>Properties</h1>
+
+
+
       </div>
     )
   }

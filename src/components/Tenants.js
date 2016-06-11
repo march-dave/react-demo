@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-
 import AddTenantForm from './AddTenantForm'
 import TenantsDisplay from './TenantsDisplay'
 
+import TenantActions from '../actions/TenantActions'
 import TenantStore from '../stores/TenantStore'
 
 let _getComponentState = () => {
@@ -12,35 +12,40 @@ let _getComponentState = () => {
 }
 
 export default class Tenants extends Component {
-
-  constructor(props) {
+  constructor(props){
     super(props);
 
-    this.state = _getComponentState();
-    this._onChange = this._onChange.bind(this);
+    this.state = _getComponentState()
+    this._onChange = this._onChange.bind(this)
   }
 
   componentDidMount() {
+    TenantActions.getAllTenants();
     TenantStore.startListening(this._onChange);
   }
 
   componentWillUnmount() {
-    TenantStore.stopListening(this._onChange);
+    TenantStore.stopListening(this._onChange)
   }
 
   _onChange() {
-    console.log('7. CHANGE event received in Tenants Component, updating state');
-    this.setState(_getComponentState());
+    this.setState(_getComponentState())
   }
 
   render() {
     return (
-      <div className>
-        <h1>Tenants Pages</h1>
-        <AddTenantForm />
-        <TenantsDisplay tenants={this.state.tenants}/>
+      <div className="text-center row">
+        <h1>Tenants</h1>
+
+        <div className="col-xs-6 col-xs-offset-3">
+          <AddTenantForm addTenant={this.addTenant} />
+        </div>
+
+        <div className="col-xs-12">
+          <TenantsDisplay tenants={this.state.tenants} />
+        </div>
+
       </div>
     )
   }
-
 }

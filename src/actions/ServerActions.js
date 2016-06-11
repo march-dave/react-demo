@@ -1,8 +1,13 @@
 import AppDispatcher from '../AppDispatcher'
 
 const ServerActions = {
+  receiveTenants(tenants) {
+    AppDispatcher.dispatch({
+      actionType: 'RECEIVE_TENANTS',
+      tenants
+    });
+  },
   receiveOneTenant(tenant) {
-    console.log('5. In server actions, dispatch RECEIVE_ONE_TENANT with: ', tenant);
     AppDispatcher.dispatch({
       actionType: 'RECEIVE_ONE_TENANT',
       tenant
