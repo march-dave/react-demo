@@ -2,8 +2,6 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router'
 
-import './style/app.scss'
-
 import App from './components/App'
 import Dashboard from './components/Dashboard'
 import Tenants from './components/Tenants'
