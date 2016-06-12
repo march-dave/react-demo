@@ -12,7 +12,13 @@
     "test": "mocha --reporter progress tools/testSetup.js \"src/**/*.spec.js\"",
     "test:watch": "npm run test -- --watch"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "express",
+    "webpack",
+    "es2015",
+    "javascript"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {

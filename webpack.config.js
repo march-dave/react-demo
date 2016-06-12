@@ -5,8 +5,7 @@ export default {
   debug: true,
   devtool: 'cheap-module-eval-source-map',
   entry: [
-    'webpack-hot-middleware/client?reload=true',
-    'bootstrap-loader',
+
     './src/index'
   ],
   target: 'web',
