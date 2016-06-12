@@ -5,8 +5,6 @@
   "main": "index.js",
   "scripts": {
     "prestart": "babel-node tools/startMessage.js",
-    "start": "npm-run-all --parallel test:watch open:src lint:watch",
-    "open:src": "babel-node tools/srcServer.js",
     "lint": "esw webpack.config.* src tools",
     "lint:watch": "npm run lint -- --watch",
     "test": "mocha --reporter progress tools/testSetup.js \"src/**/*.spec.js\"",
@@ -41,7 +39,7 @@
     "react-router": "^2.4.1"
   },
   "devDependencies": {
-    "babel-cli": "^6.9.0",
+    "babel-cli": "^6.10.1",
     "babel-core": "^6.9.0",
     "babel-loader": "^6.2.4",
     "babel-plugin-react-display-name": "^2.0.0",
